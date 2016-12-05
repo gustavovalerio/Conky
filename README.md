@@ -11,6 +11,7 @@
 <br/>Font Awesome: http://fontawesome.io/
 <br/>Font Audiowide: http://www.1001freefonts.com/audiowide.font
 <br/>Font Open 24 Display St: http://www.1001freefonts.com/open_24_display.font
+<br/>Font ConkyWind: https://github.com/gustavovalerio/Conky/blob/master/ConkyWind.otf
 <br/>Package conky-all
 <br/>Package lm-sensors
 <br/><br/><strong>INSTALLATION</strong>
