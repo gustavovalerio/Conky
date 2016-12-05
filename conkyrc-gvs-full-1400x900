@@ -3,25 +3,21 @@
 ##### BY GUSTAVO VALERIO
 ##### WWW.GUSTAVOVALERIO.COM
 ##### 4 DE DEZEMBRO DE 2016
+##### https://github.com/gustavovalerio/Conky
 
 ##### LICENSE GPL V 2.1
 # Free for use and modification
 # Keep the credits
 
-##### DEPENDENCY
-# FONTS: Coda, Awesome, Audiowide e Open 24 Display St
-# Install packages Conky-all e lm-sensors
-# RENAME THIS FILE FOR .conkyrc ON USER FOLDER
+##### DEPENDENCIES
+# Font Coda:: http://www.1001freefonts.com/coda.font
+# Font Awesome: http://fontawesome.io/
+# Font Audiowide: http://www.1001freefonts.com/audiowide.font
+# Font Open 24 Display St: http://www.1001freefonts.com/open_24_display.font
+# Font ConkyWind: https://github.com/gustavovalerio/Conky/blob/master/ConkyWind.otf
 
-# Font Coda:
-## URL: http://www.1001freefonts.com/coda.font
-# Font Awesome
-## URL: http://fontawesome.io/
-# Font Audiowide
-## URL: http://www.1001freefonts.com/audiowide.font
-# Font Open 24 Display St
-# URL: http://www.1001freefonts.com/open_24_display.font
-
+##### INSTALLATION 
+# Rename this file for .conkyrc and move for your user folder on /home 
 ##### BASICS SETTINGS
 background no
 use_xft yes
