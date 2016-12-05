@@ -1,9 +1,9 @@
-# CONKY FOR DEBIAN and Debian-likes
+###### CONKY FOR DEBIAN Gnu/Linux and Debian-likes
 # FOR MINIMUM RESOLUTION 1440x900
-##### BY GUSTAVO VALERIO
-##### WWW.GUSTAVOVALERIO.COM
-##### 4 DE DEZEMBRO DE 2016
-##### https://github.com/gustavovalerio/Conky
+# BY GUSTAVO VALERIO
+# WWW.GUSTAVOVALERIO.COM
+# 4 DE DEZEMBRO DE 2016
+# https://github.com/gustavovalerio/Conky
 
 ##### LICENSE GPL V 2.1
 # Free for use and modification
@@ -15,6 +15,13 @@
 # Font Audiowide: http://www.1001freefonts.com/audiowide.font
 # Font Open 24 Display St: http://www.1001freefonts.com/open_24_display.font
 # Font ConkyWind: https://github.com/gustavovalerio/Conky/blob/master/ConkyWind.otf
+# Package conky-all 
+# Package lm-sensors
+
+##### INSTALLATION 
+# Install packages conky-all and lm-sensors.
+# Execute sensors-detect on root terminal. 
+# Rename this file for .conkyrc and move for your user folder on /home. 
 
 ##### INSTALLATION 
 # Rename this file for .conkyrc and move for your user folder on /home 
