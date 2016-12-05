@@ -20,4 +20,4 @@
 <br/>Execute <strong>sensors-detect</strong> on root terminal.
 <br/>Rename this file for <i>.conkyrc</i> and move for your user folder on <i>/home</i>.
 <br/><br/><strong>CONKY GVS FULL 1440x900 PREVIEW</strong>
-<img src="https://github.com/gustavovalerio/Conky/blob/master/Conkyrc-gvs-full-preview.png" alt="Conky GVS" />
+<img src="https://github.com/gustavovalerio/Conky/blob/master/Conkyrc-gvs-full-preview-1440x900.png" alt="Conky GVS" />
