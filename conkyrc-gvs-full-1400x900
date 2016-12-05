@@ -23,8 +23,6 @@
 # Execute sensors-detect on root terminal. 
 # Rename this file for .conkyrc and move for your user folder on /home. 
 
-##### INSTALLATION 
-# Rename this file for .conkyrc and move for your user folder on /home 
 ##### BASICS SETTINGS
 background no
 use_xft yes
