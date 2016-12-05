@@ -161,6 +161,7 @@ ${goto 1050}${font Fontawesome:size=10}$font PACKAGES: ${execi 600 dpkg -l | 
 ${goto 1050}${font Fontawesome:size=10}$font APT CACHE: ${execi 600 find /var/cache/apt/archives -type f | wc -l}MiB
 ${goto 1050}${font Fontawesome:size=10}$font FIREWALL: ${execi 999999 systemctl status ufw | grep -i active | awk '{print $2}' | sed 's#a#A##;s#i#I##'}
 ${goto 1050}${font Fontawesome:size=10}$font DPMS: ${execi 300 xset -q | grep -i dpms | tail -1 | awk '{print $3}'}
+
 ### AUDACIOUS INFORMATION
 ${if_running audacious}
 ${goto 1140}${voffset 20}${font Fontawesome:size=10}$font SONG: ${exec audtool current-song-tuple-data title}
