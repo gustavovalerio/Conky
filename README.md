@@ -6,15 +6,13 @@
 <br/><br/><strong>LICENSE GPL V 2.1</strong>
 <br/><i>* Free for use and modification
 <br/>* Keep the credits</i>
-
-<strong>DEPENDENCIES</strong>
+<br/><br/><strong>DEPENDENCIES</strong>
 <br/>Font Coda: http://www.1001freefonts.com/coda.font
 <br/>Font Awesome: http://fontawesome.io/
 <br/>Font Audiowide: http://www.1001freefonts.com/audiowide.font
 <br/>Font Open 24 Display St: http://www.1001freefonts.com/open_24_display.font
 <br/>Package conky-all
 <br/>Package lm-sensors
-
 <br/><br/><strong>INSTALLATION</strong>
 <br/>Install packages <i>conky-all</i> and <i>lm-sensors</i>.
 <br/>Execute <strong>sensors-detect</strong> on root terminal.
