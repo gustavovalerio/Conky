@@ -1,0 +1,169 @@
+# CONKY FOR DEBIAN and Debian-likes
+# FOR MINIMUM RESOLUTION 1440x900
+##### BY GUSTAVO VALERIO
+##### WWW.GUSTAVOVALERIO.COM
+##### 4 DE DEZEMBRO DE 2016
+
+##### LICENSE GPL V 2.1
+# Free for use and modification
+# Keep the credits
+
+##### DEPENDENCY
+# FONTS: Coda, Awesome, Audiowide e Open 24 Display St
+# Install packages Conky-all e lm-sensors
+# RENAME THIS FILE FOR .conkyrc ON USER FOLDER
+
+# Font Coda:
+## URL: http://www.1001freefonts.com/coda.font
+# Font Awesome
+## URL: http://fontawesome.io/
+# Font Audiowide
+## URL: http://www.1001freefonts.com/audiowide.font
+# Font Open 24 Display St
+# URL: http://www.1001freefonts.com/open_24_display.font
+
+##### BASICS SETTINGS
+background no
+use_xft yes
+xftfont Coda:size=10
+xftalpha 1
+update_interval 1.0
+total_run_times 0
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale yes
+temperature_unit celsius
+default_color FFFFFF
+
+##### WINDOW SETTINGS
+own_window yes
+own_window_transparent yes
+own_window_type normal
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 1385
+maximum_width 1385
+
+##### BORDERS AND SHADOWS
+default_shade_color black
+default_outline_color black
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+
+##### ALIGNMENT
+alignment top_left
+gap_x 45
+gap_y 100
+
+TEXT
+##### GRAPHICS
+
+${font Audiowide:size=15}${color 000}${goto 1}PROCESSOR ${goto 355}MEMORY ${goto 355}${voffset 480}NETWORK ${voffset -480}${goto 860}FILESYSTEM ${goto 1255}SYSTEM$color
+${voffset -31}${goto 1}PROCESSOR ${goto 355}MEMORY ${goto 355}${voffset 480}NETWORK ${voffset -480}${goto 860}FILESYSTEM ${goto 1255}SYSTEM$font
+${voffset -10}${goto 1}____________________________________________ ${goto 355}____________________________________________ ${goto 700}____________________________________________ ${goto 1045}____________________________________________ ${voffset 480}${goto 355}______________________________________________________________________________________________________________________________________________ ${voffset -480}
+
+### COLUMN PROCESSOR
+${font Fontawesome:size=10}$font CORES: ${execi 999999 sensors | grep Core | wc -l}
+${font Fontawesome:size=10}$font THREADS: ${execi 999999 cat /proc/cpuinfo | grep "model name" | wc -l}
+${font Fontawesome:size=10}$font TEMPERATURE: ${execi 5 sensors | grep id | awk '{ print $4 }' | sed 's#+##'}
+${font Fontawesome:size=10}$font FREQUENCY: $freq MHz
+${font Fontawesome:size=10}$font MODEL: ${execi 999999 cat /proc/cpuinfo | grep "model name" -m1 | cut -d":" -f2 | cut -d" " -f2- | sed 's#Processor ##;s#CPU ##;s#@ ##'}
+${cpugraph cpu1 60,303 555555 FFFFFF -t}
+${voffset 10}${font ConkyWind:size=114}%$font${goto 58}${voffset -85}${font Open 24 Display St:size=40}${cpu cpu1}%$font
+${voffset -85}${goto 155}${font ConkyWind:size=119}%$font ${goto 206}${voffset -85}${font Open 24 Display St:size=40}${cpu cpu2}%$font
+${voffset 50}${font ConkyWind:size=114}%$font ${goto 58}${voffset -85}${font Open 24 Display St:size=40}${cpu cpu3}%$font
+${voffset -85}${goto 155}${font ConkyWind:size=119}%$font ${goto 206}${voffset -85}${font Open 24 Display St:size=40}${cpu cpu4}%$font
+${voffset 60}${goto 94}TOP CPU PROCESSES
+${voffset 13}NAME ${goto 180}PID ${goto 270}CPU${voffset 5}
+${goto 1}1. ${top name 1}${goto 175}${top pid 1}${goto 260}${top cpu 1}%
+${goto 1}2. ${top name 2}${goto 175}${top pid 2}${goto 260}${top cpu 2}%
+${goto 1}3. ${top name 3}${goto 175}${top pid 3}${goto 260}${top cpu 3}%
+${goto 1}4. ${top name 4}${goto 175}${top pid 4}${goto 260}${top cpu 4}%
+${goto 1}5. ${top name 5}${goto 175}${top pid 5}${goto 260}${top cpu 5}%
+${goto 1}6. ${top name 6}${goto 175}${top pid 6}${goto 260}${top cpu 6}%
+${goto 1}7. ${top name 7}${goto 175}${top pid 7}${goto 260}${top cpu 7}%
+${goto 1}8. ${top name 8}${goto 175}${top pid 8}${goto 260}${top cpu 8}%
+${goto 1}9. ${top name 9}${goto 175}${top pid 9}${goto 260}${top cpu 9}%
+${goto 1}10. ${top name 10}${goto 175}${top pid 10}${goto 260}${top cpu 10}%
+
+### COLUMN MEMORY
+${goto 340}${voffset -725}${font ConkyWind:size=114}%$font ${goto 393}${voffset -85}${font Open 24 Display St:size=40}$memperc%$font
+${voffset -67}${goto 475}MEMORY USED: $mem
+${goto 484}MEMORY FREE: $memeasyfree
+${goto 488}MEMORY CACHED: $buffers
+${goto 484}MEMORY BUFFERS: $cached
+${goto 475}MEMORY TOTAL: $memmax
+${voffset 33}${goto 355}${membar 15,307}
+${voffset 7}${goto 450}TOP RAM PROCESSES
+${voffset 3}${goto 355}NAME ${goto 540}PID ${goto 625}RAM${voffset 5}
+${goto 355}1. ${top name 1}${goto 530}${top pid 1}${goto 615}${top mem 1}%
+${goto 355}2. ${top name 2}${goto 530}${top pid 2}${goto 615}${top mem 2}%
+${goto 355}3. ${top name 3}${goto 530}${top pid 3}${goto 615}${top mem 3}%
+${goto 355}4. ${top name 4}${goto 530}${top pid 4}${goto 615}${top mem 4}%
+${goto 355}5. ${top name 5}${goto 530}${top pid 5}${goto 615}${top mem 5}%
+${goto 355}6. ${top name 6}${goto 530}${top pid 6}${goto 615}${top mem 6}%
+${goto 355}7. ${top name 7}${goto 530}${top pid 7}${goto 615}${top mem 7}%
+${goto 355}8. ${top name 8}${goto 530}${top pid 8}${goto 615}${top mem 8}%
+${goto 355}9. ${top name 9}${goto 530}${top pid 9}${goto 615}${top mem 9}%
+${goto 355}10. ${top name 10}${goto 530}${top pid 10}${goto 615}${top mem 10}%
+
+### COLUMN FILESYSTEM
+${goto 700}${voffset -405}/EFI ${goto 880}${fs_used /boot/efi} / ${fs_size /boot/efi}  (${fs_used_perc /boot/efi}%)
+${goto 700}${fs_bar 10,304 /boot/efi}
+${voffset 2}${goto 700}/TMP ${goto 874}${fs_used /run} / ${fs_size /run}  (${fs_used_perc /run}%)
+${goto 700}${fs_bar 10,304 /run}
+${voffset 2}${goto 700}/ROOT ${goto 874}${fs_used /} / ${fs_size /}  (${fs_used_perc /}%)
+${goto 700}${fs_bar 10,304 /}
+${voffset 2}${goto 700}/HOME ${goto 872}${fs_used /home} / ${fs_size /home}  (${fs_used_perc /home}%)
+${goto 700}${fs_bar 10,304 /home}
+${goto 700}${voffset 7}${font Fontawesome:size=10}$font DISK INPUT / OUTPUT  (${diskio /dev/sda})
+${goto 700}${voffset -5}${diskiograph 52,304 555555 FFFFFF -t}
+${goto 700}${voffset -7}${font Fontawesome:size=10}$font DISK READ  (${diskio_read /dev/sda})
+${goto 700}${voffset -5}${diskiograph_read 52,304 555555 FFFFFF -t}
+${goto 700}${voffset -7}${font Fontawesome:size=10}$font DISK WRITE  (${diskio_write /dev/sda})
+${goto 700}${voffset -5}${diskiograph_write 52,304 555555 FFFFFF -t}
+
+### COLUMN NETWORK
+${goto 355}${voffset 60}${font Fontawesome:size=10}$font UPLOADED: ${totalup enp2s0}
+${goto 355}${font Fontawesome:size=10}$font DOWNLOADED: ${totaldown enp2s0}
+${goto 355}${font Fontawesome:size=10}$font UPLOAD ${goto 500}${upspeed enp2s0}/s
+${goto 355}${voffset -3}${upspeedgraph enp2s0 70,200 555555 FFFFFF -t}
+${goto 355}${voffset -5}${font Fontawesome:size=10}$font DOWNLOAD ${goto 500}${downspeed enp2s0}/s
+${goto 355}${downspeedgraph enp2s0 70,200 555555 FFFFFF -t}
+
+### SECOND COLUMN NETWORK
+${goto 570}${voffset -262}${font Fontawesome:size=10}$font PORT MONITOR ${goto 1180}${font Fontawesome:size=10}$font TOTAL CONNECTIONS = ${tcp_portmon 1 65535 count}
+${goto 570}${voffset 5}HOSTNAME${goto 1065}REMOTE IP ${goto 1180}PROTO${goto 1240}LOCAL ${goto 1300}REMOTE
+${goto 570}${voffset -3}-------------------------------------------------------------------------------------------------------------------------------------${goto 1242}PORT ${goto 1307}PORT
+${goto 570}${voffset 3}${tcp_portmon 1 65535 rhost 0}${goto 1065}${tcp_portmon 1 65535 rip 0}${goto 1180}${tcp_portmon 1 65535 rservice 0}${goto 1240}${tcp_portmon 1 65535 lport 0}${goto 1300}${tcp_portmon 1 65535 rport 0}
+${goto 570}${tcp_portmon 1 65535 rhost 1}${goto 1065}${tcp_portmon 1 65535 rip 1}${goto 1180}${tcp_portmon 1 65535 rservice 1}${goto 1240}${tcp_portmon 1 65535 lport 1}${goto 1300}${tcp_portmon 1 65535 rport 1}
+${goto 570}${tcp_portmon 1 65535 rhost 2}${goto 1065}${tcp_portmon 1 65535 rip 2}${goto 1180}${tcp_portmon 1 65535 rservice 2}${goto 1240}${tcp_portmon 1 65535 lport 2}${goto 1300}${tcp_portmon 1 65535 rport 2}
+${goto 570}${tcp_portmon 1 65535 rhost 3}${goto 1065}${tcp_portmon 1 65535 rip 3}${goto 1180}${tcp_portmon 1 65535 rservice 3}${goto 1240}${tcp_portmon 1 65535 lport 3}${goto 1300}${tcp_portmon 1 65535 rport 3}
+${goto 570}${tcp_portmon 1 65535 rhost 4}${goto 1065}${tcp_portmon 1 65535 rip 4}${goto 1180}${tcp_portmon 1 65535 rservice 4}${goto 1240}${tcp_portmon 1 65535 lport 4}${goto 1300}${tcp_portmon 1 65535 rport 4}
+${goto 570}${tcp_portmon 1 65535 rhost 5}${goto 1065}${tcp_portmon 1 65535 rip 5}${goto 1180}${tcp_portmon 1 65535 rservice 5}${goto 1240}${tcp_portmon 1 65535 lport 5}${goto 1300}${tcp_portmon 1 65535 rport 5}
+${goto 570}${tcp_portmon 1 65535 rhost 6}${goto 1065}${tcp_portmon 1 65535 rip 6}${goto 1180}${tcp_portmon 1 65535 rservice 6}${goto 1240}${tcp_portmon 1 65535 lport 6}${goto 1300}${tcp_portmon 1 65535 rport 6}
+${goto 570}${tcp_portmon 1 65535 rhost 7}${goto 1065}${tcp_portmon 1 65535 rip 7}${goto 1180}${tcp_portmon 1 65535 rservice 7}${goto 1240}${tcp_portmon 1 65535 lport 7}${goto 1300}${tcp_portmon 1 65535 rport 7}
+
+### COLUMN SYSTEM
+${goto 1055}${voffset -730}${voffset 25}${font FontAwesome:size=70} ${voffset -25}${font Open 24 Display St:size=80}${time %H:%M}$font
+${goto 1050}${voffset 5}${font FontAwesome:size=11} ${font Coda:size=11} ${time %A, %d de %B de %Y}$font
+${goto 1050}${font Fontawesome:size=10}$font OS: ${exec cat /etc/issue.net | sed 's#s#S#g'}
+${goto 1050}${font Fontawesome:size=10}$font KERNEL: $kernel
+${goto 1050}${font Fontawesome:size=10}$font UPTIME: $uptime_short
+${goto 1050}${font Fontawesome:size=10}$font PROCESSES: $processes
+${goto 1050}${font Fontawesome:size=10}$font THREADS: $running_threads
+${goto 1050}${font Fontawesome:size=10}$font MEMORY USAGE ON BOOT: ${execi 999999 free -m | grep -i mem |  awk '{print $3}'}MiB
+${goto 1050}${font Fontawesome:size=10}$font PACKAGES: ${execi 600 dpkg -l | grep -c ^i}
+${goto 1050}${font Fontawesome:size=10}$font APT CACHE: ${execi 600 find /var/cache/apt/archives -type f | wc -l}MiB
+${goto 1050}${font Fontawesome:size=10}$font FIREWALL: ${execi 999999 systemctl status ufw | grep -i active | awk '{print $2}' | sed 's#a#A##;s#i#I##'}
+${goto 1050}${font Fontawesome:size=10}$font DPMS: ${execi 300 xset -q | grep -i dpms | tail -1 | awk '{print $3}'}
+### AUDACIOUS INFORMATION
+${if_running audacious}
+${goto 1140}${voffset 20}${font Fontawesome:size=10}$font SONG: ${exec audtool current-song-tuple-data title}
+${goto 1140}${font Fontawesome:size=10}$font ARTIST: ${exec audtool current-song-tuple-data artist}
+${goto 1140}${font Fontawesome:size=10}$font ALBUM: ${exec audtool current-song-tuple-data album}
+${goto 1140}${font Fontawesome:size=10}$font TIME: ${exec audtool current-song-output-length} / ${exec audtool current-song-length}
+${goto 1050}${voffset -80}${font Fontawesome:size=60}$font$endif
