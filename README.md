@@ -1,4 +1,4 @@
-<h2>CONKY FOR DEBIAN and Debian-likes</h2>
+<h2>Conky for Debian Gnu/Linux and Debian-likes</h2>
 <br/>FOR MINIMUM RESOLUTION 1440x900
 <br/><br/>BY GUSTAVO VALERIO - WWW.GUSTAVOVALERIO.COM
 <br/>DATE: 4 DE DEZEMBRO DE 2016
