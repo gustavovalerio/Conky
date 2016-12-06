@@ -138,12 +138,12 @@ ${goto 1070}${font Fontawesome:size=10}$font DPMS: ${execi 300 xset -q | grep
 
 # COLUMN AUDACIOUS
 ${if_running audacious}
-${goto 1050}${voffset -30}${font Audiowide:size=15}AUDACIOUS$font ${goto 1055}${voffset 5}______________________________________________${voffset 1}
-${goto 1150}${voffset 7}${font Fontawesome:size=10}$font SONG: ${exec audtool current-song-tuple-data title}
-${goto 1150}${font Fontawesome:size=10}$font ARTIST: ${exec audtool current-song-tuple-data artist}
-${goto 1150}${font Fontawesome:size=10}$font ALBUM: ${exec audtool current-song-tuple-data album}
-${goto 1150}${font Fontawesome:size=10}$font TIME: ${exec audtool current-song-output-length} / ${exec audtool current-song-length}
-${goto 1050}${voffset -80}${font Fontawesome:size=66}$font${voffset -6}
+${goto 1070}${voffset -30}${font Audiowide:size=15}AUDACIOUS$font ${goto 1070}${voffset 5}____________________________________________${voffset 1}
+${goto 1153}${voffset 3}${font Fontawesome:size=10}$font SONG: ${exec audtool current-song-tuple-data title}
+${goto 1153}${font Fontawesome:size=10}$font ${exec audtool current-song-tuple-data artist}
+${goto 1153}${font Fontawesome:size=10}$font ${exec audtool current-song-tuple-data album}
+${goto 1153}${font Fontawesome:size=10}$font ${exec audtool current-song-output-length} / ${exec audtool current-song-length}
+${goto 1070}${voffset -80}${font Fontawesome:size=57}$font${voffset -6}
 $else
 
 # COLUMN LOAD AVERAGE
