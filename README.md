@@ -2,6 +2,16 @@
 <br/><br/>By Gustavo Valério
 <br/><a href="http://www.gustavovalerio.com" target="_blank">www.gustavovalerio.com</a>
 
+<br/><strong><i>VERSION 2 RELEASED!</i></strong>
+<br/><i>Changelog:</i>
+<br/>1. Commands improved.
+<br/>2. Blocks reorganized.
+<br/>3. Added block exclusive for "Port Monitor".
+<br/>4. Added repository package counter
+<br/>5. Removed "TOP RAM PROCESSES" because it showed inconsistent information
+<br/>6. Added column "RAM" to "TOP CPU PROCESSES".
+<br/>7. Added graphic load average while Audacious not running.
+
 <br/><br/><strong>LICENSE GPL V 2.1 </strong>
 <br/><i>* Free for use and modification 
 <br/>* Keep the credits</i>
