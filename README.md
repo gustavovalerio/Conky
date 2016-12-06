@@ -15,6 +15,7 @@ By Gustavo Valério
 5. Removed "TOP RAM PROCESSES" because it showed inconsistent information
 6. Added column "RAM" to "TOP CPU PROCESSES".
 7. Added graphic load average while *Audacious* not running.
+8. Added compatibility for resolution 1360x768
 
 ***LICENSE GPL V 2.1***
 <br>*Free for use and modification*
