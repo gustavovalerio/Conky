@@ -98,9 +98,9 @@ ${voffset 43}${goto 356}${membar 15,320}
 ${goto 356}${voffset 20}${font Audiowide:size=15}NETWORK$font ${goto 355}${voffset 5}______________________________________________${voffset 10}
 ${goto 356}${font Fontawesome:size=10}$font UPLOADED: ${totalup enp2s0}
 ${goto 356}${font Fontawesome:size=10}$font DOWNLOADED: ${totaldown enp2s0}${voffset 10}
-${goto 356}${font Fontawesome:size=10}$font UPLOAD ${goto 640}${upspeed enp2s0}/s
+${goto 356}${font Fontawesome:size=10}$font UPLOAD $alignr${offset -748}${upspeed enp2s0}/s
 ${goto 356}${voffset -4}${upspeedgraph enp2s0 50,320 555555 FFFFFF -t}
-${goto 356}${voffset -6}${font Fontawesome:size=10}$font DOWNLOAD ${goto 640}${downspeed enp2s0}/s
+${goto 356}${voffset -6}${font Fontawesome:size=10}$font DOWNLOAD $alignr${offset -748}${downspeed enp2s0}/s
 ${goto 356}${voffset -5}${downspeedgraph enp2s0 50,320 555555 FFFFFF -t}
 
 # COLUMN FILESYSTEM
