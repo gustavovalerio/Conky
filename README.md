@@ -21,14 +21,11 @@
 <br/>Choose the file according to your resolution.
 <br/>Rename the file for <i>.conkyrc</i> and move for your user folder on <i>/home</i>.
 
-<br/><br/><br/><strong>PREVIEW CONKY FULL GVS V1 - 1440X900</strong>
-<br/><img src="Screenshots/Conky-Full-GVS-Preview-1440x900-V1.png" alt="Conky GVS Full" />
-
 <br/><br/><br/><strong>PREVIEW CONKY FULL GVS V2 - 1440X900</strong>
 <br/><img src="Screenshots/Conky-Full-GVS-PreviewNormal-1440x900-V2.png" alt="Conky GVS Full V2" />
 
 <br/><br/><br/><strong>PREVIEW CONKY FULL GVS V2 AUDACIOUS RUNNING- 1440X900</strong>
 <br/><img src="Screenshots/Conky-Full-GVS-PreviewAudacious-1440x900-V2.png" alt="Conky GVS Full V2 Audacious" />
 
-<br/><br/><br/><strong>PREVIEW CONKY FULL GVS V2 [Video] - 1440X900</strong>
-<br/><iframe width="560" height="315" src="https://www.youtube.com/embed/dwqJ4EEgg9w" frameborder="0" allowfullscreen></iframe>
+<br/><br/><br/><strong>PREVIEW CONKY FULL GVS V1 - 1440X900</strong>
+<br/><img src="Screenshots/Conky-Full-GVS-Preview-1440x900-V1.png" alt="Conky GVS Full" />
