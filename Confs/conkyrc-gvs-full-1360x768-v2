@@ -57,7 +57,7 @@ draw_graph_borders yes
 ##### ALIGNMENT
 alignment top_left
 gap_y 65
-gap_x 0
+gap_x 5
 
 TEXT
 
