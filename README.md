@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ##**Conky for Debian Gnu/Linux and derivatives**
 ===
 
