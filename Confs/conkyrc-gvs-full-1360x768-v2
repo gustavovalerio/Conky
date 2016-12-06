@@ -1,0 +1,164 @@
+###### Conky for Debian Gnu/Linux and derivatives - Version 2
+# For minimum resolution 1440x900
+# By Gustavo Valério
+# www.gustavovalerio.com
+# In 5 DE DEZEMBRO DE 2016
+# https://github.com/gustavovalerio/Conky
+
+##### LICENSE GPL V 2.1
+# Free for use and modification
+# Keep the credits
+
+##### DEPENDENCIES
+# Font Coda: https://github.com/gustavovalerio/Conky/blob/master/Fonts/Coda/Coda.ttf
+# Font Awesome: https://github.com/gustavovalerio/Conky/blob/master/Fonts/Awesome/FontAwesome.otf
+# Font Audiowide: https://github.com/gustavovalerio/Conky/blob/master/Fonts/Audiowide/Audiowide.ttf
+# Font Open 24 Display St: https://github.com/gustavovalerio/Conky/blob/master/Fonts/Open%2024%20display/Open24DisplaySt.ttf
+# Font ConkyWind: https://github.com/gustavovalerio/Conky/blob/master/Fonts/ConkyWind/ConkyWind.otf
+# Package conky-all (apt install conky-all)
+# Package lm-sensors (apt install lm-sensors)
+
+##### INSTALLATION
+# Install packages conky-all and lm-sensors (apt install conky-all lm-sensors -y).
+# Execute sensors-detect on root terminal and press ENTER until finished.
+# Choose the file according to your resolution
+# Rename the file for .conkyrc and move for your user folder on /home. 
+
+##### BASICS SETTINGS
+background no
+use_xft yes
+xftfont Coda:size=10
+xftalpha 1
+update_interval 1.0
+total_run_times 0
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale yes
+temperature_unit celsius
+default_color FFFFFF
+
+##### WINDOW SETTINGS
+own_window yes
+own_window_transparent yes
+own_window_type normal
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 1420
+maximum_width 1420
+
+##### BORDERS AND SHADOWS
+default_shade_color black
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+
+##### ALIGNMENT
+alignment top_left
+gap_y 65
+gap_x 0
+
+TEXT
+
+# COLUMN PROCESSOR
+${font Audiowide:size=15}PROCESSOR$font ${goto 5}${voffset 5}______________________________________________${voffset 10}
+${font Fontawesome:size=10}$font CORES: ${execi 999999 sensors | grep -c Core}
+${font Fontawesome:size=10}$font THREADS: ${execi 999999 cat /proc/cpuinfo | grep -c "model name"}
+${font Fontawesome:size=10}$font TEMPERATURE: ${execi 5 sensors | grep id | awk '{ print $4 }' | sed 's#+##'}
+${font Fontawesome:size=10}$font FREQUENCY: $freq MHz
+${font Fontawesome:size=10}$font MODEL: ${execi 999999 cat /proc/cpuinfo | grep "model name" -m1 | awk '{print $4, $5, $6, $9}'}
+${voffset 5}${cpugraph cpu1 60,320 555555 FFFFFF -t}
+${goto 106}CPU CORE USAGE
+${voffset 15}${font ConkyWind:size=114}%$font${goto 58}${voffset -85}${font Open 24 Display St:size=40}${cpu cpu1}%$font
+${voffset -85}${goto 155}${font ConkyWind:size=119}%$font ${goto 206}${voffset -85}${font Open 24 Display St:size=40}${cpu cpu2}%$font
+${voffset 50}${font ConkyWind:size=114}%$font ${goto 58}${voffset -85}${font Open 24 Display St:size=40}${cpu cpu3}%$font
+${voffset -85}${goto 155}${font ConkyWind:size=119}%$font ${goto 206}${voffset -85}${font Open 24 Display St:size=40}${cpu cpu4}%$font
+${voffset 50}${goto 106}TOP PROCESSES
+${voffset 10}NAME ${goto 165}PID ${goto 230}CPU ${goto 290}RAM ${voffset 5}
+${goto 1}1. ${top name 1}${goto 160}${top pid 1}${goto 220}${top cpu 1}%${goto 280}${top mem 1}%
+${goto 1}2. ${top name 2}${goto 160}${top pid 2}${goto 220}${top cpu 2}%${goto 280}${top mem 2}%
+${goto 1}3. ${top name 3}${goto 160}${top pid 3}${goto 220}${top cpu 3}%${goto 280}${top mem 3}%
+${goto 1}4. ${top name 4}${goto 160}${top pid 4}${goto 220}${top cpu 4}%${goto 280}${top mem 4}%
+${goto 1}5. ${top name 5}${goto 160}${top pid 5}${goto 220}${top cpu 5}%${goto 280}${top mem 5}%
+${goto 1}6. ${top name 6}${goto 160}${top pid 6}${goto 220}${top cpu 6}%${goto 280}${top mem 6}%
+${goto 1}7. ${top name 7}${goto 160}${top pid 7}${goto 220}${top cpu 7}%${goto 280}${top mem 7}%
+
+# COLUMN MEMORY
+${goto 355}${voffset -720}${font Audiowide:size=15}MEMORY$font ${goto 355}${voffset 5}______________________________________________${voffset 10}
+${goto 340}${font ConkyWind:size=114}%$font ${goto 396}${voffset -85}${font Open 24 Display St:size=40}$memperc%$font${voffset -67}
+${goto 475}MEMORY USED: $mem
+${goto 484}MEMORY FREE: $memeasyfree
+${goto 488}MEMORY CACHED: $buffers
+${goto 484}MEMORY BUFFERS: $cached
+${goto 475}MEMORY TOTAL: $memmax
+${voffset 43}${goto 356}${membar 15,320}
+
+# COLUMN NETWORK
+${goto 356}${voffset 20}${font Audiowide:size=15}NETWORK$font ${goto 355}${voffset 5}______________________________________________${voffset 10}
+${goto 356}${font Fontawesome:size=10}$font UPLOADED: ${totalup enp2s0}
+${goto 356}${font Fontawesome:size=10}$font DOWNLOADED: ${totaldown enp2s0}${voffset 10}
+${goto 356}${font Fontawesome:size=10}$font UPLOAD ${goto 640}${upspeed enp2s0}/s
+${goto 356}${voffset -4}${upspeedgraph enp2s0 50,320 555555 FFFFFF -t}
+${goto 356}${voffset -6}${font Fontawesome:size=10}$font DOWNLOAD ${goto 640}${downspeed enp2s0}/s
+${goto 356}${voffset -5}${downspeedgraph enp2s0 50,320 555555 FFFFFF -t}
+
+# COLUMN FILESYSTEM
+${goto 710}${voffset -511}${font Audiowide:size=15}FILESYSTEM$font ${goto 710}${voffset 5}______________________________________________${voffset 10}
+${goto 710}/EFI ${goto 890}${fs_used /boot/efi} / ${fs_size /boot/efi}${goto 1001}(${fs_used_perc /boot/efi}%)
+${goto 710}${fs_bar 10,320 /boot/efi}
+${voffset 6}${goto 710}/TMP ${goto 880}${fs_used /run} / ${fs_size /run}$alignr${offset -392}(${fs_used_perc /run}%)
+${goto 710}${fs_bar 10,320 /run}
+${voffset 6}${goto 710}/ROOT ${goto 880}${fs_used /} / ${fs_size /}$alignr${offset -392}(${fs_used_perc /}%)
+${goto 710}${fs_bar 10,320 /}
+${voffset 6}${goto 710}/HOME ${goto 880}${fs_used /home} / ${fs_size /home}$alignr${offset -392}(${fs_used_perc /home}%)
+${goto 710}${fs_bar 10,320 /home}
+${goto 710}${voffset 15}${font Fontawesome:size=10}$font DISK INPUT / OUTPUT$alignr${offset -392}(${diskio /dev/sda})
+${goto 710}${voffset -3}${diskiograph 60,320 555555 FFFFFF -t}
+${goto 710}${voffset -2}${font Fontawesome:size=10}$font DISK READ$alignr${offset -392}(${diskio_read /dev/sda})
+${goto 710}${voffset -4}${diskiograph_read 60,320 555555 FFFFFF -t}
+${goto 710}${voffset -2}${font Fontawesome:size=10}$font DISK WRITE$alignr${offset -392}(${diskio_write /dev/sda})
+${goto 710}${voffset -4}${diskiograph_write 60,320 555555 FFFFFF -t}
+
+# COLUMN SYSTEM
+${goto 1055}${voffset -511}${font Audiowide:size=15}SYSTEM$font ${goto 1055}${voffset 5}______________________________________________${voffset 10}
+${goto 1055}${offset 10}${font FontAwesome:size=70} ${voffset -25}${font Open 24 Display St:size=80}${time %H:%M}$font
+${goto 1095}${voffset 12}${font FontAwesome:size=11} ${font Coda:size=11} ${time %A, %d de %B de %Y}$font
+${goto 1070}${voffset 5}${font Fontawesome:size=10}$font OS: ${exec cat /etc/issue.net | sed 's#s#S#g'}
+${goto 1070}${font Fontawesome:size=10}$font KERNEL: $kernel
+${goto 1070}${font Fontawesome:size=10}$font UPTIME: $uptime_short
+${goto 1070}${font Fontawesome:size=10}$font PROCESSES: $processes
+${goto 1070}${font Fontawesome:size=10}$font THREADS: $running_threads
+${goto 1070}${font Fontawesome:size=10}$font MEMORY USAGE ON BOOT: ${execi 999999 free -m | grep -i mem |  awk '{print $3}'}MiB
+${goto 1070}${font Fontawesome:size=10}$font PACKAGES: ${execi 900 dpkg -l | grep -c ^i} Installed
+${goto 1070}${font Fontawesome:size=10}$font PACKAGES: ${execi 999999 apt list | wc -l} On Repository
+${goto 1070}${font Fontawesome:size=10}$font APT CACHE: ${execi 600 find /var/cache/apt/archives -type f | wc -l} PKGs
+${goto 1070}${font Fontawesome:size=10}$font FIREWALL: ${execi 999999 systemctl status ufw | grep -i active | awk '{print $2}'}
+${goto 1070}${font Fontawesome:size=10}$font DPMS: ${execi 300 xset -q | grep -i dpms | tail -1 | awk '{print $3}'}
+
+# COLUMN AUDACIOUS
+${if_running audacious}
+${goto 1050}${voffset -30}${font Audiowide:size=15}AUDACIOUS$font ${goto 1055}${voffset 5}______________________________________________${voffset 1}
+${goto 1150}${voffset 7}${font Fontawesome:size=10}$font SONG: ${exec audtool current-song-tuple-data title}
+${goto 1150}${font Fontawesome:size=10}$font ARTIST: ${exec audtool current-song-tuple-data artist}
+${goto 1150}${font Fontawesome:size=10}$font ALBUM: ${exec audtool current-song-tuple-data album}
+${goto 1150}${font Fontawesome:size=10}$font TIME: ${exec audtool current-song-output-length} / ${exec audtool current-song-length}
+${goto 1050}${voffset -80}${font Fontawesome:size=66}$font${voffset -6}
+$else
+
+# COLUMN LOAD AVERAGE
+${goto 1070}${voffset -35}LOAD AVERAGE $alignr${offset -69}$loadavg
+${goto 1070}${loadgraph 60,285 555555 FFFFFF -t}
+$endif
+
+# COLUMN PORT MONITOR
+${goto 355}${voffset -19}${font Audiowide:size=15}PORT MONITOR ${goto 1045}TOTAL CONNECTIONS = ${tcp_portmon 1 65535 count}$font ${goto 355}${voffset 5}_______________________________________________________________________________________________________________________________________________${voffset 10}
+${goto 355}${voffset -6}HOSTNAME${goto 970}REMOTE IP ${goto 1120}PROTO${goto 1210}LOCAL ${goto 1290}REMOTE
+${goto 355}${voffset -3}--------------------------------------------------------------------------------------------------------------------------------------------------------------------------${goto 1214}PORT ${goto 1298}PORT
+${goto 355}${tcp_portmon 1 65535 rhost 1}${goto 960}${tcp_portmon 1 65535 rip 1}${goto 1125}${tcp_portmon 1 65535 rservice 1}${goto 1212}${tcp_portmon 1 65535 lport 1}${goto 1305}${tcp_portmon 1 65535 rport 1}
+${goto 355}${tcp_portmon 1 65535 rhost 2}${goto 960}${tcp_portmon 1 65535 rip 2}${goto 1125}${tcp_portmon 1 65535 rservice 2}${goto 1212}${tcp_portmon 1 65535 lport 2}${goto 1305}${tcp_portmon 1 65535 rport 2}
+${goto 355}${tcp_portmon 1 65535 rhost 3}${goto 960}${tcp_portmon 1 65535 rip 3}${goto 1125}${tcp_portmon 1 65535 rservice 3}${goto 1212}${tcp_portmon 1 65535 lport 3}${goto 1305}${tcp_portmon 1 65535 rport 3}
+${goto 355}${tcp_portmon 1 65535 rhost 4}${goto 960}${tcp_portmon 1 65535 rip 4}${goto 1125}${tcp_portmon 1 65535 rservice 4}${goto 1212}${tcp_portmon 1 65535 lport 4}${goto 1305}${tcp_portmon 1 65535 rport 4}
+${goto 355}${tcp_portmon 1 65535 rhost 5}${goto 960}${tcp_portmon 1 65535 rip 5}${goto 1125}${tcp_portmon 1 65535 rservice 5}${goto 1212}${tcp_portmon 1 65535 lport 5}${goto 1305}${tcp_portmon 1 65535 rport 5}
+${goto 355}${tcp_portmon 1 65535 rhost 6}${goto 960}${tcp_portmon 1 65535 rip 6}${goto 1125}${tcp_portmon 1 65535 rservice 6}${goto 1212}${tcp_portmon 1 65535 lport 6}${goto 1305}${tcp_portmon 1 65535 rport 6}
+${goto 355}${tcp_portmon 1 65535 rhost 7}${goto 960}${tcp_portmon 1 65535 rip 7}${goto 1125}${tcp_portmon 1 65535 rservice 7}${goto 1212}${tcp_portmon 1 65535 lport 7}${goto 1305}${tcp_portmon 1 65535 rport 7}
