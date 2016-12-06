@@ -67,7 +67,7 @@ ${font Fontawesome:size=10}$font CORES: ${execi 999999 sensors | grep -c Core
 ${font Fontawesome:size=10}$font THREADS: ${execi 999999 cat /proc/cpuinfo | grep -c "model name"}
 ${font Fontawesome:size=10}$font TEMPERATURE: ${execi 5 sensors | grep id | awk '{ print $4 }' | sed 's#+##'}
 ${font Fontawesome:size=10}$font FREQUENCY: $freq MHz
-${font Fontawesome:size=10}$font MODEL: ${execi 999999 cat /proc/cpuinfo | grep "model name" -m1 | awk '{print $4, $5, $6, $9}'}
+${font Fontawesome:size=10}$font MODEL: ${execi 999999 cat /proc/cpuinfo | grep "model name" -m1 | cut -d":" -f2 | cut -d" " -f2- | sed 's#Processor ##;s#CPU ##;s#@ ##'}
 ${voffset 5}${cpugraph cpu1 60,320 555555 FFFFFF -t}
 ${goto 106}CPU CORE USAGE
 ${voffset 15}${font ConkyWind:size=114}%$font${goto 58}${voffset -85}${font Open 24 Display St:size=40}${cpu cpu1}%$font
@@ -101,9 +101,9 @@ ${voffset 43}${goto 356}${membar 15,320}
 ${goto 356}${voffset 20}${font Audiowide:size=15}NETWORK$font ${goto 355}${voffset 5}______________________________________________${voffset 10}
 ${goto 356}${font Fontawesome:size=10}$font UPLOADED: ${totalup enp2s0}
 ${goto 356}${font Fontawesome:size=10}$font DOWNLOADED: ${totaldown enp2s0}${voffset 10}
-${goto 356}${font Fontawesome:size=10}$font UPLOAD ${goto 640}${upspeed enp2s0}/s
+${goto 356}${font Fontawesome:size=10}$font UPLOAD $alignr${offset -746}${upspeed enp2s0}/s
 ${goto 356}${voffset -4}${upspeedgraph enp2s0 50,320 555555 FFFFFF -t}
-${goto 356}${voffset -6}${font Fontawesome:size=10}$font DOWNLOAD ${goto 640}${downspeed enp2s0}/s
+${goto 356}${voffset -6}${font Fontawesome:size=10}$font DOWNLOAD $alignr${offset -746}${downspeed enp2s0}/s
 ${goto 356}${voffset -5}${downspeedgraph enp2s0 50,320 555555 FFFFFF -t}
 
 # COLUMN FILESYSTEM
