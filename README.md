@@ -5,6 +5,9 @@ By Gustavo Valério
 <br>www.gustavovalerio.com
 
 ***VERSION 2 RELEASED!***
+<BR>[DOWNLOAD ZIP](https://github.com/gustavovalerio/Conky/archive/v2.1.zip) [DOWNLOAD TAR.GZ](https://github.com/gustavovalerio/Conky/archive/v2.1.tar.gz)
+
+[DOWNLOAD OLDER VERSIONS](https://github.com/gustavovalerio/Conky/releases/)
 
 *Changelog:*
 
