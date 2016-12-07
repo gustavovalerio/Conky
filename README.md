@@ -5,6 +5,8 @@ By Gustavo Valério
 
 ***VERSION 2.2 DEVELOPMENT STARTED***
 <br>To implements:
+
+
 1.  Script Installer with resolution detection and settings
 2.  Added more themes
 3.  Modules in Bash or Lua supported
@@ -17,6 +19,7 @@ By Gustavo Valério
 [DOWNLOAD OLDER VERSIONS](https://github.com/gustavovalerio/Conky/releases/)
 
 *Changelog:*
+
 
 1. Commands improved.
 2. Blocks reorganized.
