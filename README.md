@@ -44,7 +44,7 @@ By Gustavo Valério
 <br><br><br>**PREVIEW CONKY FULL GVS V2 AUDACIOUS RUNNING- 1440X900**
 <br>![Conky GVS Full V2](https://github.com/gustavovalerio/Conky/blob/images/screenshots/Conky-Full-GVS-PreviewAudacious-1440x900-V2.png)
 
-<br><br><br>**PREVIEW CONKY FULL GVS V2 AUDACIOUS RUNNING- 1360X720**
+<br><br><br>**PREVIEW CONKY FULL GVS V2 - 1360X720**
 <br>![Conky GVS Full V2](https://github.com/gustavovalerio/Conky/blob/images/screenshots/Conky-Full-GVS-PreviewNormal-1360x720-V2.png)
 
 <br><br><br>**PREVIEW CONKY FULL GVS V1 - 1440X900**
