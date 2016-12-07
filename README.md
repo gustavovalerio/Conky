@@ -45,4 +45,4 @@ By Gustavo Valério
 <br>![Conky GVS Full V2](Screenshots/Conky-Full-GVS-PreviewAudacious-1440x900-V2.png)
 
 <br><br><br>**PREVIEW CONKY FULL GVS V1 - 1440X900**
-<br>![Conky GVS Full V1](Screenshots/Conky-Full-GVS-Preview-1440x900-V1.png)
+<br>![Conky GVS Full V1](/images/screenshots/Conky-Full-GVS-Preview-1440x900-V1.png)
