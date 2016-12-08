@@ -4,9 +4,10 @@ By Gustavo Valério
 <br>www.gustavovalerio.com
 
 ***VERSION 2 RELEASED!***
-<BR>[DOWNLOAD ZIP](https://github.com/gustavovalerio/Conky/archive/v2.1.zip)   [DOWNLOAD TAR.GZ](https://github.com/gustavovalerio/Conky/archive/v2.1.tar.gz)
+<br>[DOWNLOAD ZIP](https://github.com/gustavovalerio/Conky/archive/v2.1.zip)
+<br>[DOWNLOAD TAR.GZ](https://github.com/gustavovalerio/Conky/archive/v2.1.tar.gz)
 
-[DOWNLOAD OLDER VERSIONS](https://github.com/gustavovalerio/Conky/releases/)
+[DOWNLOAD VERSION 1.0](https://github.com/gustavovalerio/Conky/tree/old)
 
 *Changelog:*
 
@@ -28,7 +29,7 @@ By Gustavo Valério
 1. Font Coda [DOWNLOAD](Fonts/Coda/Coda.ttf)
 2. Font Awesome [DOWNLOAD](Fonts/Awesome/FontAwesome.otf)
 3. Font Audiowide [DOWNLOAD](Fonts/Audiowide/Audiowide.ttf)
-4. Font Open 24 Display St [DOWNLOAD](Fonts/Open 24 display/Open24DisplaySt.ttf)
+4. Font Open 24 Display St [DOWNLOAD](Fonts/Open 24 Display/Open24DisplaySt.ttf)
 5. Font ConkyWind [DOWNLOAD](Fonts/ConkyWind/ConkyWind.otf)
 6. Package conky-all (`apt install conky-all`)
 7. Package lm-sensors (`apt install lm-sensors`)
@@ -40,14 +41,11 @@ By Gustavo Valério
 3. Choose the file according to your resolution.
 4. Rename the file for *.conkyrc* and move for your user folder on */home*.
 
-<br><br><br>**PREVIEW CONKY FULL GVS V2 - 1440X900**
+<br>##PREVIEW CONKY FULL GVS V2 - 1440X900
 <br>![Conky GVS Full V2](https://github.com/gustavovalerio/Conky/blob/images/screenshots/Conky-Full-GVS-PreviewNormal-1440x900-V2.png)
 
-<br><br><br>**PREVIEW CONKY FULL GVS V2 AUDACIOUS RUNNING- 1440X900**
+<br>##PREVIEW CONKY FULL GVS V2 AUDACIOUS RUNNING- 1440X900
 <br>![Conky GVS Full V2](https://github.com/gustavovalerio/Conky/blob/images/screenshots/Conky-Full-GVS-PreviewAudacious-1440x900-V2.png)
 
-<br><br><br>**PREVIEW CONKY FULL GVS V2 - 1360X720**
+<br>##PREVIEW CONKY FULL GVS V2 - 1360X720
 <br>![Conky GVS Full V2](https://github.com/gustavovalerio/Conky/blob/images/screenshots/Conky-Full-GVS-PreviewNormal-1360x720-V2.png)
-
-<br><br><br>**PREVIEW CONKY FULL GVS V1 - 1440X900**
-<br>![Conky GVS Full V1](https://github.com/gustavovalerio/Conky/blob/images/screenshots/Conky-Full-GVS-Preview-1440x900-V1.png)
