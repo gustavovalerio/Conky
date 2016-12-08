@@ -26,11 +26,11 @@ By Gustavo Valério
 
 **DEPENDENCIES**
 
-1. Font Coda [DOWNLOAD](fonts/Coda.tar.gz)
-2. Font Awesome [DOWNLOAD](fonts/Awesome.tar.gz)
-3. Font Audiowide [DOWNLOAD](fonts/Audiowide.tar.gz)
-4. Font Open 24 Display St [DOWNLOAD](fonts/Open 24 Display.tar.gz)
-5. Font ConkyWind [DOWNLOAD](fonts/ConkyWind.tar.gz)
+1. Font Coda [DOWNLOAD](https://github.com/gustavovalerio/Conky/raw/master/fonts/Coda/Coda.ttf)
+2. Font Awesome [DOWNLOAD](https://github.com/gustavovalerio/Conky/raw/master/fonts/Awesome/FontAwesome.otf)
+3. Font Audiowide [DOWNLOAD](https://github.com/gustavovalerio/Conky/raw/master/fonts/Audiowide/Audiowide.ttf)
+4. Font Open 24 Display St [DOWNLOAD](https://github.com/gustavovalerio/Conky/raw/master/fonts/Open%2024%20Display/Open24DisplaySt.ttf)
+5. Font ConkyWind [DOWNLOAD](https://github.com/gustavovalerio/Conky/raw/master/fonts/ConkyWind/ConkyWind.otf)
 6. Package conky-all (`apt install conky-all`)
 7. Package lm-sensors (`apt install lm-sensors`)
 
