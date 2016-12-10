@@ -1,0 +1,105 @@
+-- Conky for Debian Gnu/Linux and derivatives - Version 2.5
+--  By Gustavo Valério
+--  www.gustavovalerio.com
+--  https://github.com/gustavovalerio/Conky
+
+-- LICENSE GPL V 2.1
+--  Free for use and modification
+--  Keep the credits
+
+-- DEPENDENCIES
+--  Package conky-all (apt install conky-all)
+--  Package lm-sensors (apt install lm-sensors)
+--  Font Coda: https://github.com/gustavovalerio/Conky/blob/master/Fonts/Coda/Coda.ttf
+--  Font Awesome: https://github.com/gustavovalerio/Conky/blob/master/Fonts/Awesome/FontAwesome.otf
+--  Font Audiowide: https://github.com/gustavovalerio/Conky/blob/master/Fonts/Audiowide/Audiowide.ttf
+--  Font ConkyWind: https://github.com/gustavovalerio/Conky/blob/master/Fonts/ConkyWind/ConkyWind.otf
+--  Font Open 24 Display St: https://github.com/gustavovalerio/Conky/blob/master/Fonts/Open%2024%20display/Open24DisplaySt.ttf
+
+conky.config = {
+
+-- MONITOR
+    xinerama_head = 1,
+
+-- SIZE
+    minimum_width = 1440,
+    minimum_height = 900,
+
+-- ALIGNMENT
+    gap_x = 0,
+    gap_y = 0,
+    alignment = 'top_right',
+
+-- COLORS
+    default_color = 'white',
+    default_shade_color = 'black',
+    default_outline_color = 'white',
+    
+-- XFT
+    xftalpha = 1,
+    use_xft = true,
+    font = 'Coda:size=9',
+
+-- AVG SAMPLES
+    net_avg_samples = 2,
+    cpu_avg_samples = 2,
+    diskio_avg_samples = 2,
+
+-- BORDERS AND SHADES
+    border_width = 1,
+    draw_shades = true,
+    stippled_borders = 0,
+    draw_borders = false,
+    draw_outline = false,
+    extra_newline = false,
+    border_outer_margin = 0,
+    border_inner_margin = 0,
+    draw_graph_borders = true,
+
+-- WINDOW
+    own_window = yes,
+    background = false,
+    own_window_class = 'Conky',
+    own_window_transparent = yes,
+    own_window_type = 'override',
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+
+-- GLOBAL
+    uppercase = false,
+    no_buffers = true,
+    update_interval = 2,
+    total_run_times = 0,
+    use_spacer = 'right',
+    double_buffer = true,
+    out_to_stderr = false,
+    out_to_console = false,
+    show_graph_range = false,
+    show_graph_scale = false,
+    override_utf8_locale = yes,
+    temperature_unit = 'celsius'
+};
+
+conky.text = [[
+${goto 20}${voffset 35}${font Audiowide:size=14}PROCESSOR$font\
+${goto 20}${voffset 5}________________________________________________
+
+## MEMORY
+${goto 375}${font Audiowide:size=14}MEMORY$font\
+${goto 375}${voffset 5}________________________________________________
+
+## FILESYSTEM
+${goto 730}${font Audiowide:size=14}FILESYSTEM$font\
+${goto 730}${voffset 5}________________________________________________
+
+## HARDWARE
+${goto 1085}${font Audiowide:size=14}HARDWARE$font\
+${goto 1085}${voffset 5}________________________________________________
+
+## SYSTEM
+${goto 1085}${font Audiowide:size=14}SYSTEM$font\
+${goto 1085}${voffset 5}________________________________________________
+
+## NETWORK
+${goto 1085}${font Audiowide:size=14}NETWORK$font\
+${goto 1085}${voffset 5}________________________________________________
+]];
