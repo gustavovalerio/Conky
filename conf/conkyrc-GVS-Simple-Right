@@ -1,0 +1,124 @@
+-- Conky for Debian Gnu/Linux and derivatives - Version 2.5
+--  By Gustavo Valério
+--  www.gustavovalerio.com
+--  https://github.com/gustavovalerio/Conky
+
+-- LICENSE GPL V 2.1
+--  Free for use and modification
+--  Keep the credits
+
+-- DEPENDENCIES
+--  Package conky-all >= 1.10 (apt install conky-all)
+--  Package lm-sensors (apt install lm-sensors)
+--  Font Coda: https://github.com/gustavovalerio/Conky/blob/master/Fonts/Coda/Coda.ttf
+--  Font Awesome: https://github.com/gustavovalerio/Conky/blob/master/Fonts/Awesome/FontAwesome.otf
+--  Font ConkyWind: https://github.com/gustavovalerio/Conky/blob/master/Fonts/ConkyWind/ConkyWind.otf
+--  Font Open 24 Display St: https://github.com/gustavovalerio/Conky/blob/master/Fonts/Open%2024%20display/Open24DisplaySt.ttf
+
+conky.config = {
+
+-- MONITOR
+    xinerama_head = 0,
+
+-- SIZE
+    minimum_width = 230,
+    minimum_height = 300,
+
+-- ALIGNMENT
+    gap_x = 20,
+    gap_y = 60,
+    alignment = 'top_right',
+
+-- COLORS
+    default_color = 'white',
+    default_shade_color = 'black',
+    default_outline_color = 'white',
+    
+-- XFT
+    xftalpha = 1,
+    use_xft = true,
+    font = 'Coda:size=9',
+
+-- AVG SAMPLES
+    net_avg_samples = 2,
+    cpu_avg_samples = 2,
+    diskio_avg_samples = 2,
+
+-- BORDERS AND SHADES
+    border_width = 1,
+    draw_shades = true,
+    stippled_borders = 0,
+    draw_borders = false,
+    draw_outline = false,
+    extra_newline = false,
+    border_outer_margin = 0,
+    border_inner_margin = 0,
+    draw_graph_borders = true,
+
+-- WINDOW
+    own_window = yes,
+    background = false,
+    own_window_class = 'Conky',
+    own_window_transparent = yes,
+    own_window_type = 'override',
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+
+-- GLOBAL
+    uppercase = false,
+    no_buffers = true,
+    update_interval = 2,
+    total_run_times = 0,
+    use_spacer = 'right',
+    double_buffer = true,
+    out_to_stderr = false,
+    out_to_console = false,
+    show_graph_range = false,
+    show_graph_scale = false,
+    override_utf8_locale = yes,
+    temperature_unit = 'celsius'
+};
+
+conky.text = [[
+${cpugauge cpu1 30,50}\
+${offset 10}${cpugauge cpu2 30,50}\
+${offset 10}${cpugauge cpu3 30,50}\
+${offset 10}${cpugauge cpu4 30,50}
+${voffset -5}${offset 10}CPU 1${offset 30}CPU 2${offset 30}CPU 3${offset 30}CPU 4
+${alignc}${voffset 5}${offset -12}${font ConkyWind:size=48}%%%%$font
+${alignc}${voffset -45}${offset -107}${font Open 24 Display St:size=15}${cpu cpu1}%$font
+${alignc}${voffset -26}${offset -43}${font Open 24 Display St:size=15}${cpu cpu2}%$font
+${alignc}${voffset -26}${offset 20}${font Open 24 Display St:size=15}${cpu cpu3}%$font
+${alignc}${voffset -26}${offset 85}${font Open 24 Display St:size=15}${cpu cpu4}%$font
+${alignc}${voffset 18}${offset -12}----------------------------------------------
+${alignc}${voffset 5}${offset -12}${font ConkyWind:size=88}%%$font
+${alignc}${voffset -75}${offset -68}${font Open 24 Display St:size=26}${cpu cpu0}%$font
+${alignc}${voffset -42}${offset 47}${font Open 24 Display St:size=26}${memperc}%$font
+${alignc}${voffset 32}${offset -37}CPU USED ${offset 57}MEM USED
+${alignc}${voffset 1}${offset -12}----------------------------------------------
+${voffset 5}${font Fontawesome:size=10}$font SYSTEM
+${voffset 5}${font Fontawesome:size=10}$font OS: ${execi 999999 cat /etc/issue.net | sed 's#s#S#g'}
+${font FontConkyGVS:size=10}$font SYSTEM INSTALLED IN: \
+${execi 999999 ls -lct /etc | tail -1 | awk '{print $6, $7, $8}'}
+${font Fontawesome:size=10}$font DE: $XDG_CURRENT_DESKTOP
+${font Fontawesome:size=10}$font KERNEL: $kernel
+${font Fontawesome:size=10}$font UPTIME: $uptime_short
+${font Fontawesome:size=10}$font PACKAGES: ${execi 900 dpkg -l | grep -c ^i} Installed
+${font Fontawesome:size=10}$font PACKAGES: ${execi 999999 apt list | wc -l} On Repository
+${font Fontawesome:size=10}$font APT CACHE: ${execi 600 find /var/cache/apt/archives -type f | wc -l} PKGs
+${font Fontawesome:size=10}$font PROCESSES: $processes  (${running_processes} Running)
+${font Fontawesome:size=10}$font THREADS: $running_threads
+${font Fontawesome:size=10}$font MEMORY ON STARTUP: ${execi 999999 free -m | grep -i mem |  awk '{print $3}'}MiB
+${font Fontawesome:size=10}$font TEMPERATURE: ${execi 5 sensors | grep id | awk '{ print $4 }' | sed 's#+##'}
+${font Fontawesome:size=10}$font CPU FREQUENCY: $freq MHz
+${font Fontawesome:size=10}$font MEMORY USED: $mem / $memmax
+${font Fontawesome:size=10}$font FIREWALL: ${execi 999999 systemctl status ufw | grep -i active | awk '{print $2}'}
+${font Fontawesome:size=10}$font DPMS: ${execi 300 xset -q | grep -i dpms | tail -1 | awk '{print $3}'}
+${alignc}${voffset 1}${offset -12}----------------------------------------------
+${font Fontawesome:size=10}$font NETWORK
+${font Fontawesome:size=10}${voffset 5}$font UPLOADED: ${totalup enp2s0}
+${font Fontawesome:size=10}$font DOWNLOADED: ${totaldown enp2s0}${voffset 10}
+${font Fontawesome:size=10}$font UPLOAD $alignr${offset -26}${upspeed enp2s0}/s
+${voffset -4}${upspeedgraph enp2s0 50,230 555555 FFFFFF -t}
+${voffset -6}${font Fontawesome:size=10}$font DOWNLOAD $alignr${offset -26}${downspeed enp2s0}/s
+${voffset -5}${downspeedgraph enp2s0 50,230 555555 FFFFFF -t}
+]];
