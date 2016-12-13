@@ -41,6 +41,9 @@ By Gustavo Valério
 3. Choose the file according to your resolution.
 4. Rename the file for *.conkyrc* and move for your user folder on */home*.
 
+##PREVIEW CONKY SIMPLE RIGHT V1
+<br>![Conky Simple Right V1](https://github.com/gustavovalerio/Conky/blob/images/screenshots/Conky-simple-right.png)
+
 ##PREVIEW CONKY FULL GVS V2 - 1440X900
 <br>![Conky GVS Full V2](https://github.com/gustavovalerio/Conky/blob/images/screenshots/Conky-Full-GVS-PreviewNormal-1440x900-V2.png)
 
