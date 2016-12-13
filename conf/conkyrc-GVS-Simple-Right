@@ -1,4 +1,4 @@
--- Conky for Debian Gnu/Linux and derivatives - Version 2.5
+-- Conky for Debian Gnu/Linux and derivatives - Version 1.0
 --  By Gustavo Valério
 --  www.gustavovalerio.com
 --  https://github.com/gustavovalerio/Conky
@@ -25,8 +25,8 @@ conky.config = {
     minimum_height = 300,
 
 -- ALIGNMENT
-    gap_x = 20,
-    gap_y = 60,
+    gap_x = 25,
+    gap_y = 40,
     alignment = 'top_right',
 
 -- COLORS
@@ -94,6 +94,7 @@ ${alignc}${voffset 5}${offset -12}${font ConkyWind:size=88}%%$font
 ${alignc}${voffset -75}${offset -68}${font Open 24 Display St:size=26}${cpu cpu0}%$font
 ${alignc}${voffset -42}${offset 47}${font Open 24 Display St:size=26}${memperc}%$font
 ${alignc}${voffset 32}${offset -37}CPU USED ${offset 57}MEM USED
+${voffset 5}${cpugraph cpu1 30,230 555555 FFFFFF -t}
 ${alignc}${voffset 1}${offset -12}----------------------------------------------
 ${voffset 5}${font Fontawesome:size=10}$font SYSTEM
 ${voffset 5}${font Fontawesome:size=10}$font OS: ${execi 999999 cat /etc/issue.net | sed 's#s#S#g'}
@@ -102,14 +103,15 @@ ${execi 999999 ls -lct /etc | tail -1 | awk '{print $6, $7, $8}'}
 ${font Fontawesome:size=10}$font DE: $XDG_CURRENT_DESKTOP
 ${font Fontawesome:size=10}$font KERNEL: $kernel
 ${font Fontawesome:size=10}$font UPTIME: $uptime_short
-${font Fontawesome:size=10}$font PACKAGES: ${execi 900 dpkg -l | grep -c ^i} Installed
-${font Fontawesome:size=10}$font PACKAGES: ${execi 999999 apt list | wc -l} On Repository
+${font Fontawesome:size=10}$font PACKAGES: ${execi 900 dpkg -l | grep -c ^i} / \
+${execi 999999 apt list | wc -l}
 ${font Fontawesome:size=10}$font APT CACHE: ${execi 600 find /var/cache/apt/archives -type f | wc -l} PKGs
 ${font Fontawesome:size=10}$font PROCESSES: $processes  (${running_processes} Running)
 ${font Fontawesome:size=10}$font THREADS: $running_threads
 ${font Fontawesome:size=10}$font MEMORY ON STARTUP: ${execi 999999 free -m | grep -i mem |  awk '{print $3}'}MiB
 ${font Fontawesome:size=10}$font TEMPERATURE: ${execi 5 sensors | grep id | awk '{ print $4 }' | sed 's#+##'}
-${font Fontawesome:size=10}$font CPU FREQUENCY: $freq MHz
+${font Fontawesome:size=10}$font CPU FREQUENCY: $freq MHz /\
+${execi 999999 cat /proc/cpuinfo | grep "model name" -m1 | cut -d "@" -f2}
 ${font Fontawesome:size=10}$font MEMORY USED: $mem / $memmax
 ${font Fontawesome:size=10}$font FIREWALL: ${execi 999999 systemctl status ufw | grep -i active | awk '{print $2}'}
 ${font Fontawesome:size=10}$font DPMS: ${execi 300 xset -q | grep -i dpms | tail -1 | awk '{print $3}'}
@@ -118,7 +120,7 @@ ${font Fontawesome:size=10}$font NETWORK
 ${font Fontawesome:size=10}${voffset 5}$font UPLOADED: ${totalup enp2s0}
 ${font Fontawesome:size=10}$font DOWNLOADED: ${totaldown enp2s0}${voffset 10}
 ${font Fontawesome:size=10}$font UPLOAD $alignr${offset -26}${upspeed enp2s0}/s
-${voffset -4}${upspeedgraph enp2s0 50,230 555555 FFFFFF -t}
+${voffset -4}${upspeedgraph enp2s0 40,230 555555 FFFFFF -t}
 ${voffset -6}${font Fontawesome:size=10}$font DOWNLOAD $alignr${offset -26}${downspeed enp2s0}/s
-${voffset -5}${downspeedgraph enp2s0 50,230 555555 FFFFFF -t}
+${voffset -5}${downspeedgraph enp2s0 40,230 555555 FFFFFF -t}
 ]];
