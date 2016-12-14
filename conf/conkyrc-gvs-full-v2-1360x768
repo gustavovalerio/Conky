@@ -67,7 +67,7 @@ ${font Fontawesome:size=10}$font CORES: ${execi 999999 grep "cpu cores"  -m1 
 ${font Fontawesome:size=10}$font THREADS: ${execi 999999 grep -c cpu[0-9] /proc/stat}
 ${font Fontawesome:size=10}$font TEMPERATURE: ${execi 5 sensors | grep id | awk '{ print $4 }' | sed 's#+##'}
 ${font Fontawesome:size=10}$font FREQUENCY: $freq MHz
-${font Fontawesome:size=10}$font MODEL: ${execi 999999 cat /proc/cpuinfo | grep "model name" -m1 | cut -d":" -f2 | cut -d" " -f2- | sed 's#Processor ##;s#CPU ##;s#@ ##'}
+${font Fontawesome:size=10}$font MODEL: ${execi 999999 cat grep "model name" -m1 /proc/cpuinfo | cut -d":" -f2 | cut -d" " -f2- | sed 's#Processor ##;s#CPU ##;s#@ ##'}
 ${voffset 5}${cpugraph cpu1 60,320 555555 FFFFFF -t}
 ${goto 106}CPU CORE USAGE
 ${voffset 15}${font ConkyWind:size=114}%$font${goto 58}${voffset -85}${font Open 24 Display St:size=40}${cpu cpu1}%$font
