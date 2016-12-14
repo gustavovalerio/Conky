@@ -64,7 +64,7 @@ TEXT
 # COLUMN PROCESSOR
 ${font Audiowide:size=15}PROCESSOR$font ${goto 5}${voffset 5}______________________________________________${voffset 10}
 ${font Fontawesome:size=10}$font CORES: ${execi 999999 grep "cpu cores"  -m1 /proc/cpuinfo | cut -d ":" -f2}
-${font Fontawesome:size=10}$font THREADS: ${execi 999999 cat /proc/cpuinfo | grep -c "model name"}
+${font Fontawesome:size=10}$font THREADS: ${execi 999999 grep -c cpu[0-9] /proc/stat}
 ${font Fontawesome:size=10}$font TEMPERATURE: ${execi 5 sensors | grep id | awk '{ print $4 }' | sed 's#+##'}
 ${font Fontawesome:size=10}$font FREQUENCY: $freq MHz
 ${font Fontawesome:size=10}$font MODEL: ${execi 999999 cat /proc/cpuinfo | grep "model name" -m1 | cut -d":" -f2 | cut -d" " -f2- | sed 's#Processor ##;s#CPU ##;s#@ ##'}
