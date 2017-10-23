@@ -1,7 +1,7 @@
 ##**Conky for Debian Gnu/Linux and derivatives**
 
 By Gustavo Valério
-<br>www.gustavovalerio.com
+<br>www.gustavovalerio.com.br
 
 ***VERSION 2 RELEASED!***
 <br>[DOWNLOAD ZIP](https://github.com/gustavovalerio/Conky/archive/v2.1.zip)
