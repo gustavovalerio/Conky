@@ -3,6 +3,9 @@
 By Gustavo Valério
 <br>www.gustavovalerio.com.br
 
+##Vou atualizar as configs dos Conkys, mas não postarei nesse repositório
+e sim no outro: https://github.com/valeriogustavo/valeriogustavo.github.io
+
 ***VERSION 2 RELEASED!***
 <br>[DOWNLOAD ZIP](https://github.com/gustavovalerio/Conky/archive/v2.1.zip)
 <br>[DOWNLOAD TAR.GZ](https://github.com/gustavovalerio/Conky/archive/v2.1.tar.gz)
